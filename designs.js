@@ -9,13 +9,14 @@ $('#sizePicker').submit(event => {
     let width = $inputWidth.val();
     let height = $inputHeight.val();
 
-// Clear
+// Clear Grid
 // When size is submitted by the user, call makeGrid()
     $tableElement.html('');
     makeGrid(height, width);
     addCellClickListener();
 });
 
+// Grid mount function and for loop to add columns and rows
 function makeGrid(height, width) {
     for (let i = 0; i < height; i++) {
         $tableElement.append('<tr></tr>');
@@ -25,7 +26,7 @@ function makeGrid(height, width) {
     };
 };
 
-// Select color input
+// Select color input and click event to insert color
 function addCellClickListener() {
     $('td').click(event => {
         let color = $colorPicker.val();
